@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "commonjs",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "resolveJsonModule": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "strictPropertyInitialization": true,
+        "noImplicitThis": true,
+        "noUnusedLocals": true,
+        "alwaysStrict": true,
+        "baseUrl": "./",
+        "types": ["node", "jest"],
+        "paths": {
+            "*": ["*"]
+        }
+    },
+    "include": ["src/**/*", "test/**/*", "config/**/*"],
+    "exclude": ["node_modules", "dist"]
+}
