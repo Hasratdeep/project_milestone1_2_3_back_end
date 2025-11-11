@@ -28,7 +28,7 @@ describe("Task Routes", () => {
   });
 
   it("should handle DELETE api tasks", async () => {
-    const res = await request(app).delete("/api/tasks/1");
+    const res = await request(app).delete("task1");
     expect(res.status).toBe(200);
   });
 });
