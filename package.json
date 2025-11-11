@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "jest --detectOpenHandles --forceExit"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
@@ -20,3 +24,4 @@
     "typescript": "^5.9.3"
   }
 }
+
