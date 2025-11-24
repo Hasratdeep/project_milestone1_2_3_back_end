@@ -1,26 +1,26 @@
 {
-    "compilerOptions": {
-        "target": "ES6",
-        "module": "commonjs",
-        "strict": true,
-        "esModuleInterop": true,
-        "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true,
-        "rootDir": "./src",
-        "outDir": "./dist",
-        "resolveJsonModule": true,
-        "noImplicitAny": true,
-        "strictNullChecks": true,
-        "strictPropertyInitialization": true,
-        "noImplicitThis": true,
-        "noUnusedLocals": true,
-        "alwaysStrict": true,
-        "baseUrl": "./",
-        "types": ["node", "jest"],
-        "paths": {
-            "*": ["*"]
-        }
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "baseUrl": "./",
+    "paths": {
+      "*": ["*"]
     },
-    "include": ["src/**/*", "test/**/*", "config/**/*"],
-    "exclude": ["node_modules", "dist"]
+    "types": ["node", "jest"]
+  },
+  "include": ["src/**/*", "test/**/*", "config/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
