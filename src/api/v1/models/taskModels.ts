@@ -1,23 +1,32 @@
-import mongoose from "mongoose";
+import mongoose, { Document, Schema } from "mongoose";
 
-export interface Task {
-  name: string;
+export interface ITask extends Document {
+  title: string;
   description?: string;
-  completed: boolean;
-  createdAt: Date;
-  updatedAt: Date;
+  status: "pending" | "completed";
+  user: mongoose.Types.ObjectId;
+  dueDate?: Date;
 }
 
-const taskSchema = new mongoose.Schema({
-  title: { type: String, required: true },
-  description: String,
-  completed: { type: Boolean, default: false },
-}); 
+const taskSchema: Schema<ITask> = new Schema({
+  title: { type: String, required: true, minlength: 3, maxlength: 100 },
+  description: { type: String, maxlength: 500 },
+  status: { type: String, enum: ["pending", "completed"], default: "pending" },
+  user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+  dueDate: {
+    type: Date,
+    validate: {
+      validator: (v: Date) => !v || v >= new Date(),
+      message: "Due date cannot be in the past",
+    },
+  },
+}, { timestamps: true });
 
-// Model
-const Task = mongoose.model("Task", taskSchema);
+export default mongoose.model<ITask>("Task", taskSchema);
 
-export default Task;
+
+
+
 
 
 
