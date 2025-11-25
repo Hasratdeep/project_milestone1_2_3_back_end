@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import connectDB from "./api/v1/config/database";
+import connectDB from "../src/api/v1/config/database";
 import taskRoutes from "../src/api/v1/Routes/taskRoutes";
 
 // Load environment variables
