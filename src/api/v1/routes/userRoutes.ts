@@ -1,35 +1,15 @@
 import { Router } from "express";
-import { login, createUser, getUsers } from "../Controller/userController";
+import { signup, login, getUsers } from "../Controller/userController";
 
 const router = Router();
-/**
- * @swagger
- * /users/login:
- *   post:
- *     summary: Create user
- */
-router.post("/", createUser);
 
-/**
- * @swagger
- * /users/signup:
- *   post:
- *     summary: Register a new user
- */
-router.post("/", login);
+// POST /signup
+router.post("/signup", signup);
 
-/**
- * @swagger
- * /users:
- *   get:
- *     summary: Get all users with optional filtering
- */
+// POST /login
+router.post("/login", login);
+
+// GET all users
 router.get("/", getUsers);
-
-router.post("/", createUser);
-router.get("/", getUsers);
-router.get("/", login);
 
 export default router;
-
-
