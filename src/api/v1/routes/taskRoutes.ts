@@ -2,7 +2,6 @@ import { Router } from "express";
 import { createTask, getTasks, getTask, updateTask, deleteTask } from "../Controller/taskController";
 
 const router = Router();
-
 /**
  * @swagger
  * /tasks:
@@ -12,7 +11,7 @@ const router = Router();
  *       200:
  *         description: List of tasks
  */
-
+router.get("/:id", getTask);
 /**
  * @swagger
  * /tasks:
