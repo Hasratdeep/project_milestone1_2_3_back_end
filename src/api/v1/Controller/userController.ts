@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import User from "../Model/userModel";
 
-// Simple s
+// create user 
 export const createUser = async (req: Request, res: Response) => {
     const { username, password } = req.body;
     if (!username || !password) return res.status(400).json({ msg: "All fields required" });
@@ -10,7 +10,7 @@ export const createUser = async (req: Request, res: Response) => {
     res.status(201).json({ msg: "User created", user });
 };
 
-// Simple login
+// login
 export const login = async (req: Request, res: Response) => {
     const { username, password } = req.body;
     const user = await User.findOne({ username, password });

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createUser, getUsers } from "../Controller/userController";
+import { login, createUser, getUsers } from "../Controller/userController";
 
 const router = Router();
 /**
@@ -12,13 +12,23 @@ router.post("/", createUser);
 
 /**
  * @swagger
+ * /users/signup:
+ *   post:
+ *     summary: Register a new user
+ */
+router.post("/", login);
+
+/**
+ * @swagger
  * /users:
  *   get:
  *     summary: Get all users with optional filtering
  */
 router.get("/", getUsers);
+
 router.post("/", createUser);
 router.get("/", getUsers);
+router.get("/", login);
 
 export default router;
 
