@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createTask, getTasks, getTask, updateTask, deleteTask } from "../controllers/taskController";
+import { createTask, getTasks, getTask, updateTask, deleteTask } from "../Controller/taskControllers";
 
 const router = Router();
 
@@ -12,6 +12,7 @@ const router = Router();
  *       200:
  *         description: List of tasks
  */
+
 /**
  * @swagger
  * /tasks:
@@ -40,13 +41,5 @@ router.get("/", getTasks);
 router.get("/:id", getTask);
 router.patch("/:id", updateTask);
 router.delete("/:id", deleteTask);
-
-router.post("/", (req, res) => {
-  res.json({ message: "Create task works" });
-});
-
-router.get("/", (req, res) => {
-  res.json({ message: "Get all tasks works" });
-});
 
 export default router;

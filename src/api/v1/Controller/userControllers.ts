@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import User, { IUser } from "../models/userModels";
+import User, { IUser } from "../Model/userModel";
 
 export const createUser = async (req: Request, res: Response) => {
   try {

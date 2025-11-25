@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import Task, { ITask } from "../models/taskModels";
+import Task, { ITask } from "../Model/taskModel";
 
 export const createTask = async (req: Request, res: Response) => {
   try {

@@ -4,13 +4,13 @@ const options: swaggerJsdoc.Options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Mongodb API',
+      title: 'Milestone 3',
       version: '1.0.0',
       description: 'A robust API for managing tasks, complete with JWT authentication, user-specific authorization, and advanced filtering capabilities (including due date and recurrence).',
     },
     servers: [
       {
-        url: '/api/v1',
+        url: 'http://localhost:3000',
         description: 'Development Server',
       },
     ],
@@ -52,3 +52,6 @@ const options: swaggerJsdoc.Options = {
 };
 
 export const specs = swaggerJsdoc(options);
+
+
+

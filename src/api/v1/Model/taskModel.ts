@@ -4,7 +4,6 @@ export interface ITask extends Document {
   title: string;
   description?: string;
   status: "pending" | "completed";
-  user: mongoose.Types.ObjectId;
   dueDate?: Date;
 }
 
@@ -12,7 +11,6 @@ const taskSchema: Schema<ITask> = new Schema({
   title: { type: String, required: true, minlength: 3, maxlength: 100 },
   description: { type: String, maxlength: 500 },
   status: { type: String, enum: ["pending", "completed"], default: "pending" },
-  user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
   dueDate: {
     type: Date,
     validate: {
@@ -23,11 +21,3 @@ const taskSchema: Schema<ITask> = new Schema({
 }, { timestamps: true });
 
 export default mongoose.model<ITask>("Task", taskSchema);
-
-
-
-
-
-
-
-
